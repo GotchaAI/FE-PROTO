@@ -30,3 +30,8 @@
 
 7. **Result (게임 종료 & 결과)**
    - 게임이 종료되었음을 알리고, 점수 및 결과를 표시
+
+---
+
+https://github.com/user-attachments/assets/abe5718f-7541-478b-81d9-8377a4e22c90
+

@@ -1,0 +1,30 @@
+.draw-scene-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .drawing-container {
+    width: 600px;
+    height: 650px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .game-header {
+      background-color: #ffa283;
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .drawing-zone {
+      box-sizing: border-box;
+      border: solid 5px black;
+      width: 600px;
+      height: 600px;
+    }
+  }
+}

@@ -50,7 +50,13 @@ const GamePage = () => {
           goToNextScene={() => setSceneIdx((prev) => prev + 1)} // scene 이동 함수
         />,
         <BattleScene
-          key={`battle-${round}`}
+          key={`battle1-${round}`}
+          userInfo={gameInfo.userInfo}
+          round={round}
+          goToNextScene={() => setSceneIdx((prev) => prev + 1)}
+        />,
+        <BattleScene
+          key={`battle2-${round}`}
           userInfo={gameInfo.userInfo}
           round={round}
           goToNextScene={() => setSceneIdx((prev) => prev + 1)}

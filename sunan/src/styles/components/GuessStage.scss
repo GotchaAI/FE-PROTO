@@ -1,0 +1,184 @@
+.guess-stage {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  text-align: center;
+  background-color: black;
+  position: relative;
+
+  .title {
+    color: #fff;
+  }
+
+  /* 누가 무슨 답을 말했는지 표시하는 텍스트 */
+  .feedback-guess {
+    position: absolute;
+    top: 40%;  
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #ffeb3b; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  /* O/X */
+  .feedback-symbol {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 200px;
+    color: red;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  .top-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+
+    .spotlight {
+      position: absolute;
+      top: -40px;
+      width: 80px;
+      height: auto;
+      transition: left 0.5s ease;
+      z-index: 2;
+    }
+
+    .player-side,
+    .ai-side {
+      width: 400px;
+      height: 800px;
+      filter: brightness(0.4);
+      border: 1px solid #ccc;
+      position: relative;
+      padding: 10px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      .podium-container {
+        position: relative;
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        .player-name {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          background: rgba(255, 255, 255, 0.7);
+          padding: 4px 8px;
+          border-radius: 4px;
+          z-index: 3;
+        }
+      }
+    }
+
+    .middle-screen {
+      width: 800px;
+      height: 800px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .tv-frame {
+        width: 800px;
+        height: 800px;
+        background: #ffffff;
+        border: 20px solid #2e4ede;
+        border-radius: 20px;
+        box-shadow:
+          0 0 15px rgba(0, 0, 0, 0.5),
+          inset 0 0 5px rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &.player-active {
+      .spotlight {
+        left: 20px;
+      }
+      .player-side {
+        filter: none;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          background: radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 70%
+          );
+        }
+      }
+    }
+
+    &.ai-active {
+      .spotlight {
+        left: calc(100% - 100px);
+      }
+      .ai-side {
+        filter: none;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          background: radial-gradient(
+            circle at 50% 40%,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 70%
+          );
+        }
+      }
+    }
+  }
+
+  .guess-input-section {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+    form {
+      display: flex;
+      gap: 10px;
+
+      input {
+        padding: 8px;
+        font-size: 16px;
+      }
+      button {
+        padding: 8px 16px;
+        cursor: pointer;
+      }
+    }
+
+    h2 {
+      margin-top: 10px;
+    }
+  }
+}

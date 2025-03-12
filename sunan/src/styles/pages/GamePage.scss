@@ -1,0 +1,38 @@
+.game-body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .info-container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #DFDFDF;
+    gap: 10px;
+    .keyword-box{
+      width: 400px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: xx-large;
+      font-weight: bold;
+      background-color: #FFA283;
+      border-radius: 9px;
+      margin-bottom: 5px;
+    }
+  }
+.game-over{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  .game-over-ment{
+    font-size: 50px;  
+  }
+}

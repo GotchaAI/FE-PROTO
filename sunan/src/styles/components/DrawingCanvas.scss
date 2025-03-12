@@ -1,0 +1,99 @@
+.canvas-container{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;   
+    align-items: center;
+    background-color: #DFDFDF; 
+    position: relative;
+    .round-number {
+        margin-top: 2%;
+        position: absolute;
+        top:0;
+        font-size: 20px;
+        font-weight: bold;
+        background-color: black;
+        color: white;
+        width: 210px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        border-radius: 40%;
+        position: relative; 
+      }
+    
+      .message-box {
+        position: absolute;
+        top: 5%; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: 730px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffa283;
+        border-radius: 10px;
+        font-size: 28px;
+        font-weight: bold;
+        z-index: 10; // ✅ 겹쳐질 때 위로 오도록 설정
+      }
+    
+    
+    .canvas-layer-wrapper {
+        border: 2px solid black;
+        width: 1000px;
+        height: 850px; 
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        .canvas-stage{
+            pointer-events: auto;
+            width: 1000px;
+            height: 800px;
+        }
+    }
+    .canvas-button-container{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        .canvas-button{
+            width: 50px;
+            height: 50px;
+            font-size: x-large;
+            border: 1px solid black;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &:hover{
+                background-color: #f0f0f0;
+            }
+        }
+    }
+    .submit-button{
+        position: absolute;
+        right: 7%;
+        bottom: 3%;
+        font-size: xx-large;
+        border: none;
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        background-color: orange; 
+        z-index: 10;
+        &:hover{
+            background-color: rgba(255, 166, 0, 0.523);
+        }
+    }
+}

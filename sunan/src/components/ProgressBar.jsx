@@ -33,4 +33,5 @@ const progressBar = {
   borderRadius: "8px",
   transition: "width 1s linear",
 };
+
 export default ProgressBar;

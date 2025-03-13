@@ -1,5 +1,3 @@
-import { Posterize } from "konva/lib/filters/Posterize";
-
 const ProgressBar = ({ timeLeft, totalTime = 30 }) => {
   const percentage = (timeLeft / totalTime) * 100;
   const barColor = timeLeft <= 5 ? "red" : "limegreen";

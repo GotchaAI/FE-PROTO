@@ -5,7 +5,6 @@ import phantom from "../assets/phantom.png";
 import Keyword from "../components/Keyword";
 import GuessStage from "../components/GuessStage";
 
-const GAME_DURATION = 30; // 30초 제한
 const TOTAL_ROUNDS = 3; // 총 라운드 수
 
 const gameInfo = {
@@ -17,24 +16,8 @@ const gameInfo = {
 };
 
 const GamePage = () => {
-  const [timeLeft, setTimeLeft] = useState(GAME_DURATION);
   const [roundNum, setRoundNum] = useState(1); // 1,3,5 = 그림 / 2,4,6 = 정답 맞추기
 
-  // ⏳ 라운드가 변경될 때마다 시간 초기화
-  useEffect(() => {
-    setTimeLeft(GAME_DURATION); // 새로운 라운드 시작 시 30초로 초기화
-  }, [roundNum]);
-
-  // ⏳ 타이머 로직 (1초마다 감소)
-  useEffect(() => {
-    if (timeLeft <= 0) return; // 시간이 끝나면 멈춤
-
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [timeLeft]);
   // 모든 라운드 종료 후 게임 종료 표시 (라운드는 총 6번 진행됨)
   if (roundNum > TOTAL_ROUNDS * 2) {
     return (
@@ -58,7 +41,6 @@ const GamePage = () => {
             <img src={phantom} alt="팬텀"></img>
           </div>
           <DrawingCanvas
-            timeLeft={timeLeft}
             roundNum={currentRound}
             setRoundNum={setRoundNum}
           />

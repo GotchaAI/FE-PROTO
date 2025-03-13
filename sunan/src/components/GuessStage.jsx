@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/components/GuessStage.scss";
 import spotlight from "../assets/spotlight.jpeg";
-
 import podiumImg from "../assets/stand.jpg";
 import playerProfile from "../assets/player.png";
 import aiProfile from "../assets/ai.png";
